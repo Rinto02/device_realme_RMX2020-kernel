@@ -39,7 +39,7 @@ jobs:
           cd kernel
           rm -rf .git
           bash build.sh
-          git clone https://"sarthakroy2002":"${GITHUB_TOKEN}"@github.com/sarthakroy2002/device_realme_RMX2020-kernel push
+          git clone https://"sarthakroy2002":"${GITHUB_TOKEN}"@github.com/sarthakroy2002/device_realme_RMX2020-kernel -b arrow-13.1-rui2 push
           cp -r out/arch/arm64/boot/Image.gz push
           cd push
           git add .
