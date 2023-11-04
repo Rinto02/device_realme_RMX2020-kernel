@@ -11,10 +11,10 @@ on:
           required: true   
 
 env:
-  TZ: Asia/Kolkata
+  TZ: Asia/Dhaka
   REPO: ${{ github.event.inputs.repo }}
   BRANCH: ${{ github.event.inputs.branch }}
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  GH_TOKEN: ${{ secrets.TOKEN }}
 
 jobs:
   kernel-build:
@@ -39,7 +39,7 @@ jobs:
           cd kernel
           rm -rf .git
           bash build.sh
-          git clone https://"Rinto02":"${GITHUB_TOKEN}"@github.com/Rinto02/device_realme_RMX2020-kernel -b arrow-13.1-rui2 push
+          git clone https://"Rinto02":"${GH_TOKEN}"@github.com/Rinto02/device_realme_RMX2020-kernel -b arrow-13.1-rui2 push
           cp -r out/arch/arm64/boot/Image.gz push
           cd push
           git add .
